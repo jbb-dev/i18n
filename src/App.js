@@ -1,25 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import { useTranslation, Trans } from 'react-i18next';
-import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 
 function App() {
 
-  const [lang, setLang] = useState('en');
+  const MY_NAME = 'Paul';
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('translation');
 
   const handleLanguage = () => {
-    if (lang === 'en')
+    if (i18next.resolvedLanguage === 'en')
     {
-      setLang('de');
-      i18n.changeLanguage('de')
+      i18n.changeLanguage('fr');
     }
     else
     {
-      setLang('en');
-      i18n.changeLanguage('en')
+      i18n.changeLanguage('en');
     };
   };
 
@@ -27,21 +24,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button onClick={handleLanguage}>Change Language</button>
-        <button onClick={() => console.log(i18next.resolvedLanguage)}>Current Language</button>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <Trans i18nKey="description.part1">
-            Edit <code>src/App.js</code> and save to reload.
-          </Trans>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t('description.part2')}
-        </a>
+        <h1>{t("welcome.title")}</h1>
+        <h3>{t("hello", { name: MY_NAME })}</h3>
+        <p>{t("unread_msg", { count: 1 })}</p>
       </header>
     </div>
   );

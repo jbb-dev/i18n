@@ -1,0 +1,8 @@
+{
+    "welcome": {
+        "title": "Bienvenue à bord"
+    },
+    "hello": "Bonjour {{name}}",
+    "unread_msg" : "Vous avez {{count}} message non lu",
+    "unread_msg_other" : "Vous avez {{count}} messages non lus"
+}

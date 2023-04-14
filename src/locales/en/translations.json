@@ -1,0 +1,8 @@
+{
+    "welcome": {
+        "title": "Welcome on board"
+    },
+    "hello": "Hello {{name}}",
+    "unread_msg" : "You have got {{count}} unread message",
+    "unread_msg_other" : "You have got {{count}} unread messages"
+}
